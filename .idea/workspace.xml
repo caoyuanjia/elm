@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="009b30e2-612d-4eb9-b4af-2b5c25bd4961" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="009b30e2-612d-4eb9-b4af-2b5c25bd4961" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -27,8 +25,8 @@
     <handled-path value="$PROJECT_DIR$/app/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="241" />
-    <option name="y" value="320" />
+    <option name="x" value="194" />
+    <option name="y" value="110" />
     <option name="width" value="1126" />
     <option name="height" value="893" />
   </component>
@@ -90,24 +88,24 @@
       <option name="presentableId" value="Default" />
       <updated>1525397293921</updated>
       <workItem from="1525397295381" duration="1857000" />
-      <workItem from="1525399504658" duration="96000" />
+      <workItem from="1525399504658" duration="192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1953000" />
+    <option name="totallyTimeSpent" value="2049000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="241" y="320" width="1126" height="893" extended-state="0" />
+    <frame x="194" y="110" width="1126" height="893" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23257919" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23257919" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27889448" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27889448" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
