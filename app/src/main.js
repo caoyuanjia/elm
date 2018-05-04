@@ -4,6 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+
+//调接口
+import axios from "axios";
+import vueAxios from "vue-axios";
+Vue.use(vueAxios,axios);
+
+Vue.use(ElementUI);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -13,3 +24,5 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+
