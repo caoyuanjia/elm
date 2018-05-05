@@ -1,7 +1,8 @@
 <template>
   <div class="head">
       <div class="head_top">
-        <img src="../../../src/assets/返回.png" alt="" id="fh">
+        <router-link to="/home"><img src="../../../src/assets/返回.png" alt="" id="fh"></router-link>
+
         <span class="head_dw">郑州</span>
         <span class="qhcs">切换城市</span>
       </div>
@@ -73,7 +74,7 @@
      background: #3190e8;
      font-size: .65rem;
      color:#fff;
-     
+
    }
    .ssls {
      border-bottom: 0.085rem solid #e4e4e4;

@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="009b30e2-612d-4eb9-b4af-2b5c25bd4961" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/assets/更多.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/返回.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/city/City.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/homePage/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/homePage/HomePage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/city/City.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/city/City.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -84,8 +78,8 @@
       <file leaf-file-name="City.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/components/city/City.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+            <state relative-caret-position="90">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -154,8 +148,8 @@
     <handled-path value="$PROJECT_DIR$/app/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="851" />
-    <option name="y" value="83" />
+    <option name="x" value="366" />
+    <option name="y" value="61" />
     <option name="width" value="1325" />
     <option name="height" value="893" />
   </component>
@@ -294,15 +288,15 @@
       <workItem from="1525439030802" duration="991000" />
       <workItem from="1525441273441" duration="359000" />
       <workItem from="1525442058132" duration="1770000" />
-      <workItem from="1525482785889" duration="21550000" />
+      <workItem from="1525482785889" duration="21716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39382000" />
+    <option name="totallyTimeSpent" value="39548000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="851" y="83" width="1325" height="893" extended-state="0" />
+    <frame x="366" y="61" width="1325" height="893" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19708589" />
@@ -720,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/city/City.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+        <state relative-caret-position="90">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
         </state>
       </provider>
     </entry>
