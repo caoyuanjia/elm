@@ -2,9 +2,9 @@
 
   <div id="app">
     <div class="head">
-      <span class="ele">ele.me</span>
-      <span class="dl">登录/注册</span>
-    </div>
+    <span class="ele">ele.me</span>
+    <span class="dl">登录/注册</span>
+  </div>
     <div class="left">
       <span class="dq">当前定位城市:</span>
       <span class="bzs">定位不准时,请在城市列表中选择</span>
