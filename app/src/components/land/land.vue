@@ -19,9 +19,7 @@
         <input type="text" placeholder="验证码" style="font-size: .7rem" v-model="yzm">
         <ul>
           <li>
-            <!--<router-link to="/">-->
-              <img :src="pic" alt="" class="photo">
-            <!--</router-link>-->
+            <img :src="pic" alt="" class="photo">
           </li>
         </ul>
         <div class="chang_img">
@@ -42,16 +40,19 @@
       登录
     </div>
 
-    <a href="#">重置密码？</a>
+    <router-link to="changePassword">
+      <a href="#">重置密码？</a>
+    </router-link>
   </div>
-  <div class="wenti">
-    <div v-if="orshow" class="perblem">
-      <span class="perblem_1"></span>
-      <span class="perblem_2"></span>
-      <p class="perblem_text">请输入手机号/邮箱/用户名</p>
-      <div class="perblem_ok">确认</div>
+  <div class="wenti" v-if="orshow">
+    <div class="perblem">
+      <span class="perblem1"></span>
+      <span class="perblem2"></span>
     </div>
+    <p class="perblem_text">请输入手机号/邮箱/用户名</p>
+    <div class="perblem_ok">确认</div>
   </div>
+
 </div>
 </template>
 
@@ -115,33 +116,8 @@
 </script>
 
 <style scoped>
-  .wenti{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -6rem;
-    margin-left: -6rem;
-    width: 12rem;
-    animation: tipMove .4s;
-    background-color: #fff;
-    padding-top: .6rem;
-    border: 1px;
-    border-radius: .25rem;
-  }
 
-
-  .perblem{
-    width: 3rem;
-    height: 3rem;
-    border: .15rem solid #f8cb86;
-    border-radius: 50%;
-  }
-  .perblem .perblem_1{
-    width: .12rem;
-    height: 1.5rem;
-    background-color: #f8cb86;
-  }
-  .perblem .perblem_2{
+  .perblem perblem2{
     width: .2rem;
     height: .2rem;
     border: 1px;
@@ -149,6 +125,8 @@
     margin-top: .2rem;
     background-color: #f8cb86;
   }
+
+
 
 
   img{
@@ -181,7 +159,12 @@
     font-weight: 700;
     line-height: 1.95rem;
   }
+  input:focus{
+    outline: none;
+  }
   .c_input{
+    border: 0;
+    outline:none;
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between;
