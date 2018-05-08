@@ -44,17 +44,18 @@
       <img src="../../assets/wxb明星店铺.png" alt="" class="dianpu_img">
       <span>附近商家</span>
     </header>
-    <ul>
+    <ul v-for="message in messages">
       <li class="c_list">
         <div class="bottom_img">
-          <img src="//elm.cangdu.org/img/16018a5c08533.jpeg" class="shop_img">
+          <img :src="'//elm.cangdu.org/img/'+message.image_path
+" class="shop_img">
         </div>
         <div>
           <header style="display: flex;justify-content: space-between;align-items: center;
 }">
             <h4 class="c_h4">
-              <span class="c_pinpai">品牌</span>
-              <span>效果演示</span>
+              <span class="c_pinpai" style="font-weight: bolder;color: #333">品牌</span>
+              <span style="font-weight: bolder;color: #333;font-size: .7rem">{{message.name}}</span>
             </h4>
             <ul class="c_middle">
               <li>保</li>
@@ -62,30 +63,32 @@
               <li>票</li>
             </ul>
           </header>
-          <h5 c_h51>
-            <div style="display: flex;justify-content: flex-start;">
+          <h5 class="c_h51">
+            <div class="star">
               <el-rate
-                v-model="value5"
+                v-model="message.rating"
                 disabled
                 show-score
                 text-color="#ff9900"
                 score-template="{value}">
               </el-rate>
             </div>
-            <span>月销售106单</span>
-            <span>蜂鸟专送</span>
-            <span>准时达</span>
+            <div class="span1">月售106单</div>
+            <div class="span2">蜂鸟专送</div>
+            <div class="span3">准时达</div>
           </h5>
           <h5>
-            <span>
+            <p class="p1">
               ￥20起送/配送费约￥5
-            </span>
-            <span>
-              1437.5公里/
-            </span>
-            <span>
-              18小时32分钟
-            </span>
+            </p>
+            <div class="c_div">
+              <span>
+                {{message.distance}} /
+              </span>
+              <span style="color: #3190e8">
+                {{message.order_lead_time}}
+              </span>
+            </div>
           </h5>
         </div>
       </li>
@@ -101,7 +104,7 @@
   import Swiper from 'swiper';
   import 'swiper/dist/css/swiper.min.css';
   let api2 ='http://cangdu.org:8001/v2/index_entry';
-
+  let api6 = 'http://cangdu.org:8001/shopping/restaurants?latitude=31.22967&longitude=121.4762\n' + '\n';
     export default {
       name: "face",
       data(){
@@ -109,14 +112,14 @@
           duixiang:[],
           count:[],
           shuju:[],
-          value5: 4.7
+          value5: 4.7,
+          messages:""
         }
       },
       mounted(){
         setTimeout(function () {
           new Swiper('#swiper', {
             loop: true,
-            // pagination: '.swiper-pagination',
             autoplay: 2000,
             paginationClickable: true,
             pagination: {
@@ -130,12 +133,16 @@
       },
       created(){
         Vue.axios.get(api2).then((response)=>{
-          console.log(response.data)
+          // console.log(response.data)
           this.duixiang = response.data.slice(0,8)
           // this.count = this.duixiang.unshift(this.duixiang[0])
-          console.log(this.duixiang)
+          // console.log(this.duixiang)
           this.shuju = response.data.slice(8)
-          console.log(this.shuju)
+          // console.log(this.shuju)
+        })
+        Vue.axios.get(api6).then((response)=>{
+          console.log(response.data)
+          this.messages = response.data
         })
       }
     }
@@ -151,6 +158,7 @@
   #swiper{
     padding-bottom: 1rem;
     margin-top: -0.5rem;
+    margin-top: 60px;
   }
   .c_top{
     position: fixed;
@@ -216,12 +224,13 @@
   .c_list{
     display: flex;
     border-bottom: .025rem solid #f1f1f1;
-    padding: .7rem .4rem;
+    padding: .7rem .4rem 1.1rem;
   }
   .c_middle{
     display: flex;
     transform: scale(.8);
     margin-right: -.3rem;
+    margin-left: 1.8rem;
   }
   .c_middle li{
     font-size: .5rem;
@@ -231,17 +240,78 @@
     border-radius: .08rem;
     margin-left: .05rem;
   }
+
   .c_h4{
     width: 8.5rem;
     color: #333;
     padding-top: .01rem;
     font: .65rem/.65rem PingFangSC-Regular;
-    font-weight: 700;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: -.4rem;
   }
   .c_h51{
     display: flex;
     justify-content: space-between;
     height: .6rem;
-    margin-top: .52rem;
+    /*margin-top: .52rem;*/
+    margin-top: -.1rem;
+  }
+  .star{
+    display: flex;
+    justify-content: flex-start;
+    transform: scale(0.6);
+    /*margin-left: -1.1rem;*/
+    position: absolute;
+    left: 2.3rem;
+  }
+  .c_h51 .span1{
+    width: 2.5rem;
+    transform: scale(0.8);
+    font-size: .2rem;
+    color: #666;
+    position: absolute;
+    left: 7rem;
+    margin-top: .2rem;
+  }
+  .c_h51 .span2{
+    width: 2.1rem;
+    height: .6rem;
+    transform: scale(0.8);
+    color: #fff;
+    background-color: #3190e8;
+    border: .025rem solid #3190e8;
+    font-size: .4rem;
+    padding: .04rem .08rem 0;
+    border-radius: .08rem;
+    position: absolute;
+    right: 1.6rem;
+    /*margin-top: -.02rem;*/
+  }
+  .c_h51 .span3{
+    color: #3190e8;
+    border: .025rem solid #3190e8;
+    width: 1.7rem;
+    height: .6rem;
+    border-radius: .08rem;
+    transform: scale(0.8);
+    position: absolute;
+    right: .2rem;
+    /*margin-right: -2rem;*/
+  }
+  .p1{
+    transform: scale(.9);
+    font-size: .5rem;
+    color: #666;
+    position: absolute;
+    left: 3.5rem;
+    margin-top: .8rem;
+  }
+  .c_div{
+    transform: scale(.9);
+    font-size: .5rem;
+    position: absolute;
+    right: .3rem;
+    margin-top: .2rem;
   }
 </style>

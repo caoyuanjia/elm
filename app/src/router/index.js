@@ -4,7 +4,7 @@ import Home from '@/components/home/Home'
 import land from "@/components/land/land"
 import changePassword from '@/components/changePassword/changePassword'
 import face from "@/components/face/face"
-
+import effect from "@/components/effect/effect"
 
 
 Vue.use(Router)
@@ -27,6 +27,10 @@ export default new Router({
       path: '/face',
       name: 'face',
       component: face
+    },{
+      path: '/effect',
+      name: 'effect',
+      component: effect
     }
   ]
 })
