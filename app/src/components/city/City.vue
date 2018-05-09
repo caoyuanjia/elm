@@ -1,15 +1,15 @@
 <template>
   <div class="head">
       <div class="head_top">
-        <router-link to="/home"><img src="../../../src/assets/返回.png" alt="" id="fh"></router-link>
+        <router-link to="/home"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
 
-        <span class="head_dw">郑州</span>
+        <span class="head_dw">{{citys}}</span>
 
         <router-link to="/home"><span class="qhcs">切换城市</span></router-link>
       </div>
       <div class="head_tj">
         <input type="text" placeholder="输入学校、商务楼、地址" class="srxx">
-        <router-link to="/msite"><input type="submit" value="提交" class="tjcs"></router-link>
+        <router-link to="/"><input type="submit" value="提交" class="tjcs"></router-link>
       </div>
     <div class="ssls">
       <span>搜索历史</span>
@@ -21,8 +21,25 @@
 </template>
 
 <script>
+    var val=document.getElementsByClassName("srxx").value;
+    console.log(val);
+    import Vue from "vue"
     export default {
-        name: "City"
+        name: "City",
+        data(){
+          return{
+            citys:""
+          }
+        },
+      created(){
+        let api5="http://cangdu.org:8001/v1/cities/"+this.$route.query.id
+          Vue.axios.get(api5).then((response)=>{
+            //console.log(response.data.name)
+            this.citys = response.data.name
+          })
+          //console.log(this.$route.query.id)
+
+      }
     }
 </script>
 

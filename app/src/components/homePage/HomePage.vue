@@ -2,23 +2,27 @@
 
   <div id="app">
     <div class="head">
-    <span class="ele">ele.me</span>
-    <span class="dl">登录/注册</span>
-  </div>
+      <span class="ele">ele.me</span>
+      <span class="dl">登录/注册</span>
+    </div>
     <div class="left">
       <span class="dq">当前定位城市:</span>
       <span class="bzs">定位不准时,请在城市列表中选择</span>
     </div>
-    <div class="dwcs">
-      <span class="zz">{{guess.name}}</span>
-      <span class="dy"> <router-link to="/city"> <img src="../../../src/assets/更多.png" alt="" id="jt"> </router-link> </span>
+    <div class="dwcs" >
+      <router-link :to="{name:'City',query:{id:guess.id}}" >
+        <span class="zz">{{guess.name}}</span>
+        <div class="dy">
+          <img src="../../assets/jiantou  you.png" alt="" id="jt">
+        </div>
+      </router-link>
     </div>
     <div class="rmcs">
       <span>热门城市</span>
     </div>
     <ul>
       <li v-for="city in hotCity">
-        <router-link to="/">
+        <router-link :to="{name:'City',query:{id:city.id}}">
           {{city.name}}
         </router-link>
       </li>
@@ -27,19 +31,22 @@
     <span class="azm">(按字母排序)</span>
     <div class="zz">
       <div v-for="(value,index) in group">
-      <h4 class="zz1">
-        {{index}}
-      </h4>
-        <ul class="azm_ul">
-        <li v-for=" values in value">
-{{values.name}}
-        </li>
-      </ul>
+        <h4 class="zz1">
+          {{index}}
+        </h4>
+        <ul class="azm_ul" >
+
+            <li v-for="(values,index) in value" id="bs">
+              <router-link :to="{name:'City',query:{id: values.id}}">
+              {{values.name}}
+              </router-link>
+            </li>
+
+        </ul>
       </div>
 
     </div>
   </div>
-
 
 
 </template>
@@ -50,28 +57,31 @@
   let aip1 = '../../../static/css/reset.css';
   let api2 = "http://cangdu.org:8001/v1/cities?type=group";
   let api3 = "http://cangdu.org:8001/v1/cities?type=hot";
-  let api4="http://cangdu.org:8001/v1/cities?type=guess";
+  let api4 = "http://cangdu.org:8001/v1/cities?type=guess";
   export default {
     name: "HomePage",
     data: function () {
       return {
         hotCity: [],
         group: [],
-        guess:[]
+        guess: []
       }
     },
 
 
+
     created() {
       Vue.axios.get(api3).then((response) => {
-        console.log(response.data)
+        //console.log(response.data)
         this.hotCity = response.data;
 
       });
-      Vue.axios.get(api2).then((groupa)=>{
-        console.log(groupa.data);
-        this.group=groupa.data;
-        this.group=objKeySort(this.group)
+      Vue.axios.get(api2).then((groupa) => {
+        //console.log(groupa.data);
+        this.group = groupa.data;
+        this.group = objKeySort(this.group)
+        //console.log(this.group.id)
+
         function objKeySort(obj) {//排序的函数
           var newkey = Object.keys(obj).sort();
           var newObj = {};
@@ -81,9 +91,9 @@
           return newObj;
         }
       });
-      Vue.axios.get(api4).then((guessa)=>{
-        console.log(guessa.data);
-        this.guess=guessa.data;
+      Vue.axios.get(api4).then((guessa) => {
+        //console.log(guessa.data);
+        this.guess = guessa.data;
       })
     }
 
@@ -92,12 +102,13 @@
 </script>
 
 <style scoped>
-  body,html{
+  body, html {
     padding: 0;
     margin: 0;
     font-size: 0;
   }
-  #app{
+
+  #app {
     width: 100%;
     height: 100%;
     background: #f5f5f5;
@@ -137,7 +148,6 @@
   .left span {
     font-size: .55rem;
 
-
   }
 
   .left {
@@ -151,7 +161,7 @@
   .dq {
     margin-top: 2.55rem;
     margin-left: 0.35rem;
-    color:#666;
+    color: #666;
   }
 
   .bzs {
@@ -171,12 +181,16 @@
     background: #fff;
   }
 
-
-  #jt{
+  #jt {
     width: .6rem;
-    margin-left: 12.5rem;
-    margin-top: 0.15rem;
+    height: .6rem;
+    position: absolute;
+    left: 14.5rem;
+    top: 4.4rem;
+    z-index: 100;
+    /*background: red;*/
   }
+
   .rmcs {
     font-size: .45rem;
     color: #666;
@@ -196,9 +210,8 @@
     border-right: 0.048rem solid #e4e4e4;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     font-size: .6rem;
-    color: #666;
     font-weight: 200;
     line-height: 1.5rem;
     background: #fff;
@@ -210,7 +223,10 @@
     color: #3190e8;
 
   }
-  .zz1{
+  .dy{
+    display: inline-block;
+  }
+  .zz1 {
     padding: 0.5rem;
     color: #666;
     font-size: 0.65rem;
@@ -219,7 +235,8 @@
     border-bottom: 0.045rem solid #e4e4e4;
     background: #fff;
   }
-  .azm{
+
+  .azm {
     font-size: 0.475rem;
     color: #999;
     position: absolute;
@@ -227,10 +244,17 @@
     left: 1.4rem;
 
   }
-  /*ul{*/
-    /*border-bottom: 0.085rem solid #e4e4e4;*/
+
+
+   /*ul{*/
+  /*border-bottom: 0.085rem solid #e4e4e4;*/
   /*}*/
-  .zz{
+  .zz {
     font-size: 0.75rem;
+    color: #3190e8;
+  }
+  #bs a{
+    color: #666;
   }
 </style>
+
