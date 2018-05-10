@@ -15,92 +15,16 @@
       </div>
     </div>
     <div class="pro">
-      <h4>热门问题</h4>
-      <ul v-for="txt in txts">
-        <li>{{txt}}</li>
-      </ul>
-        <!--<div class="s4">-->
-          <!--<span class="a1">超级会员权益说明</span>-->
-          <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div>-->
+      <h4 class="prob">热门问题</h4>
 
-        <!--<div class="s4">-->
-          <!--<span class="a1">签到规则</span>-->
-          <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div>-->
-      <!--<div class="s4">-->
-        <!--<span class="a1">用户等级说明</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div>-->
+      <router-link to="/service/questionDetail">
+        <div class="s4" v-for="lis in txts">
+          <span class="a1">{{lis.name}}<img src="../../assets/箭头1.png" alt="" class="jt4"></span>
 
-      <!--<div class="s4">-->
-        <!--<span class="a1">积分问题</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div><div class="s4">-->
-      <!--<span class="a1">教我拍大片</span>-->
-      <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-    <!--</div>-->
+      </div>
+      </router-link>
 
-      <!--<div class="s4">-->
-        <!--<span class="a1">支付问题</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div><div class="s4">-->
-      <!--<span class="a1">其他问题</span>-->
-      <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-    <!--</div>-->
 
-      <!--<div class="s4">-->
-        <!--<span class="a1">准时达问题</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div><div class="s4">-->
-      <!--<span class="a1">会员说明</span>-->
-      <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-    <!--</div>-->
-
-      <!--<div class="s4">-->
-        <!--<span class="a1">会员问题</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div><div class="s4">-->
-      <!--<span class="a1">红包问题</span>-->
-      <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-    <!--</div>-->
-
-      <!--<div class="s4">-->
-        <!--<span class="a1">活动细则</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div><div class="s4">-->
-      <!--<span class="a1">补签规则</span>-->
-      <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-    <!--</div>-->
-
-      <!--<div class="s4">-->
-        <!--<span class="a1">优惠说明</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div><div class="s4">-->
-      <!--<span class="a1">免责声明</span>-->
-      <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-    <!--</div>-->
-
-      <!--<div class="s4">-->
-        <!--<span class="a1">代金券说明</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div><div class="s4">-->
-      <!--<span class="a1">商务合作</span>-->
-      <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-    <!--</div>-->
-
-      <!--<div class="s4">-->
-        <!--<span class="a1">余额问题</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div><div class="s4">-->
-      <!--<span class="a1">超赞商家</span>-->
-      <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-    <!--</div>-->
-
-      <!--<div class="s4">-->
-        <!--<span class="a1">匿名购买</span>-->
-        <!--<img src="../../assets/箭头1.png" alt="" class="jt4">-->
-      <!--</div>-->
 
 
 
@@ -130,8 +54,35 @@
     },
     created(){
       Vue.axios.get(api33).then((response)=>{
-        console.log(response);
-        this.txts = response;
+        function dealjson(obj) {
+          var arr = []
+          var Jsonarr = []
+          let object = {}
+          for (var key in obj) {
+            arr.push(obj[key]); //属性
+          }
+          for (let i = 0; i < arr.length; i++) {
+            if (i % 2 != 0) {
+              object.name = arr[i]
+              Jsonarr.push(object)
+              object = {}
+            } else {
+              object.des = arr[i]
+              object.id = i
+            }
+          }
+          var one = Jsonarr.slice(0, 13)
+          var two = Jsonarr.slice(13, 23)
+          for (let j = 0; j < two.length; j++) {
+            [two[j].des, two[j].name] = [two[j].name, two[j].des]
+          }
+          var three = one.concat(two)
+          three.splice(12, 1)
+          three.splice(4, 1)
+          return three
+        }
+        this.txts=dealjson(response.data)
+        console.log(dealjson(response.data))
       })
     }
   }
@@ -229,5 +180,9 @@
     font-size: 0.6rem;
     font-weight: 300;
     color: #333;
+  }
+  .prob{
+    padding: 1rem 0 1rem 0.5rem;
+    border-bottom: 0.0427rem solid #f1f1f1;
   }
 </style>

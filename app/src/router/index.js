@@ -12,6 +12,7 @@ import Points from "@/components/points/Points"
 import Vipcard from "@/components/vipcard/Vipcard"
 import AutoLogin from "@/components/autoLogin/AutoLogin"
 import Service from "@/components/service/Service"
+
 Vue.use(Router)
 
 export default new Router({

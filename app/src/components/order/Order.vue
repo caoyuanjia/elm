@@ -4,6 +4,12 @@
       <router-link to="/home"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
       <span class="head_dw">订单列表</span>
     </div>
+    <div class="foot">
+      <div class="foot1" id="foot1"><img src="../../assets/饿了么-3.png" alt="" id="wm"> <span class="wm">外卖</span></div>
+      <div class="foot1"><img src="../../assets/znz.png" alt="" id="ss"><span class="ss">搜索</span></div>
+      <div class="foot1"><img src="../../assets/文本.png" alt="" id="wb"><span class="wb">文本</span></div>
+      <div class="foot1"><img src="../../assets/用户.png" alt="" id="yh"><span class="yh">用户</span></div>
+    </div>
   </div>
 </template>
 
@@ -33,5 +39,60 @@
     margin-left: 5rem;
     font-size: .8rem;
     color: #fff;
+  }
+  .foot{
+    width: 100%;
+    height: 1.95rem;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+  }
+  #foot1{
+    /*margin-left: 10%;*/
+    text-align: center;
+  }
+  .foot1{
+    display: inline-block;
+    width: 20%;
+    margin-left: 3.5%;
+  }
+  #wm{
+    width: 0.9rem;
+
+  }
+  .wm{
+    display: block;
+  }
+  .ss{
+    display: block;
+  }
+  #ss{
+    width: 1rem;
+    margin-left: 0.3rem;
+    margin-bottom: 0.05rem;
+
+  }
+  #wb{
+    width: 0.8rem;
+    margin-left: 0.35rem;
+    margin-bottom: 0.08rem;
+  }
+  .wb{
+    display: block;
+  }
+  #yh{
+    width: 0.8rem;
+    margin-left: 0.3rem;
+    margin-bottom: 0.05rem;
+
+  }
+  .yh{
+    display: block;
+  }
+  .foot1 span {
+    font-size: .45rem;
+    color: #666;
   }
 </style>
