@@ -12,7 +12,9 @@ import Points from "@/components/points/Points"
 import Vipcard from "@/components/vipcard/Vipcard"
 import AutoLogin from "@/components/autoLogin/AutoLogin"
 import Service from "@/components/service/Service"
-
+import QuestionDetail from "@/components/service/questionDetail/QuestionDetail"
+import Download from "@/components/download/Download"
+import Benefit from "@/components/benefit/Benefit"
 Vue.use(Router)
 
 export default new Router({
@@ -78,6 +80,22 @@ export default new Router({
       path:"/service",
       name:"Service",
       component:Service
+    }
+    ,
+    {
+      path:"/service/questionDetail",
+      name:"QuestionDetail",
+      component:QuestionDetail
+    },
+    {
+      path:'/download',
+      name:"Download",
+      component:Download
+    },
+    {
+      path:'/benefit',
+      name:"Benefit",
+      component:Benefit
     }
   ]
 })

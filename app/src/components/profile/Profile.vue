@@ -25,6 +25,7 @@
         <span class="ye1">我的余额</span>
         </router-link>
       </div>
+      <router-link to="/benefit">
       <div class="yh">
         <div class="yuan">
         <span class="yuan2">
@@ -33,6 +34,7 @@
         <br>
         <span  id="ye1">我的优惠</span>
       </div>
+      </router-link>
       <router-link to="/points">
       <div class="yh">
         <div class="yuan">
@@ -79,18 +81,24 @@
           <img src="../../assets/箭头1.png" alt="" id="jt4"></div>
       </div>
       </router-link>
+      <router-link to="/download">
       <div>
         <img src="../../assets/饿了么-2.png" alt="" id="wb6">
         <div id="s5">
           <span class="a1">下载饿了么APP</span>
           <img src="../../assets/箭头1.png" alt="" id="jt6"></div>
       </div>
+      </router-link>
     </div>
     <div class="foot">
       <div class="foot1" id="foot1"><img src="../../assets/饿了么-3.png" alt="" id="wm"> <span class="wm">外卖</span></div>
+      <router-link to="/search">
       <div class="foot1"><img src="../../assets/znz.png" alt="" id="ss"><span class="ss">搜索</span></div>
+      </router-link>
+      <router-link to="/order">
       <div class="foot1"><img src="../../assets/文本.png" alt="" id="wb"><span class="wb">文本</span></div>
-      <div class="foot1"><img src="../../assets/用户.png" alt="" id="yh"><span class="yhh">用户</span></div>
+      </router-link>
+      <div class="foot1"><img src="../../assets/用户.png" alt="" id="yh"><span class="yhh">我的</span></div>
     </div>
 
 

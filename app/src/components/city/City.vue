@@ -106,7 +106,7 @@
   }
 
   .head_dw {
-    margin-left: 6rem;
+    margin-left: 5.7rem;
     font-size: .8rem;
     color: #fff;
   }

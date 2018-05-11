@@ -17,12 +17,15 @@
     <div class="pro">
       <h4 class="prob">热门问题</h4>
 
-      <router-link to="/service/questionDetail">
-        <div class="s4" v-for="lis in txts">
-          <span class="a1">{{lis.name}}<img src="../../assets/箭头1.png" alt="" class="jt4"></span>
 
-      </div>
-      </router-link>
+        <div  v-for="lis in txts">
+          <router-link :to="{path:'/service/questionDetail',query:{id:lis.id,name:lis.name,des:lis.des}}">
+            <div class="s4">
+          <span class="a1">{{lis.name}}<img src="../../assets/箭头1.png" alt="" class="jt4"></span>
+            </div>
+          </router-link>
+        </div>
+
 
 
 
@@ -109,7 +112,7 @@
   }
 
   .head_dw {
-    margin-left: 6rem;
+    margin-left: 5.5rem;
     font-size: .8rem;
     color: #fff;
   }

@@ -6,9 +6,13 @@
     </div>
     <div class="foot">
       <div class="foot1" id="foot1"><img src="../../assets/饿了么-3.png" alt="" id="wm"> <span class="wm">外卖</span></div>
+      <router-link to="/search">
       <div class="foot1"><img src="../../assets/znz.png" alt="" id="ss"><span class="ss">搜索</span></div>
+      </router-link>
       <div class="foot1"><img src="../../assets/文本.png" alt="" id="wb"><span class="wb">文本</span></div>
-      <div class="foot1"><img src="../../assets/用户.png" alt="" id="yh"><span class="yh">用户</span></div>
+      <router-link to="/profile">
+      <div class="foot1"><img src="../../assets/用户.png" alt="" id="yh"><span class="yh">我的</span></div>
+      </router-link>
     </div>
   </div>
 </template>
