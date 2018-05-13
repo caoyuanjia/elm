@@ -15,6 +15,9 @@ import Service from "@/components/service/Service"
 import QuestionDetail from "@/components/service/questionDetail/QuestionDetail"
 import Download from "@/components/download/Download"
 import Benefit from "@/components/benefit/Benefit"
+import Coupon from  "@/components/coupon/Coupon"
+import Detaill from "@/components/detail/Detaill"
+import Info from "@/components/info/Info"
 Vue.use(Router)
 
 export default new Router({
@@ -96,6 +99,22 @@ export default new Router({
       path:'/benefit',
       name:"Benefit",
       component:Benefit
+    },
+    {
+      path:"/coupon",
+      name:"Coupon",
+      component:Coupon
+    },
+    {
+      path:"/detaill",
+      name:"Detaill",
+      component:Detaill
+    },
+    {
+      path:"/info",
+      name:"Info",
+      component:Info
     }
+
   ]
 })

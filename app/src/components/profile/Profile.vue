@@ -4,6 +4,7 @@
       <router-link to="/home"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
       <span class="head_dw">我的</span>
     </div>
+    <router-link to="/info">
     <div class="center"><img  src="//elm.cangdu.org/img/default.jpg" class="privateImage">
       <div class="a111">
         <p>登录/注册</p>
@@ -14,6 +15,7 @@
       </div>
       <img src="../../assets/箭头.png" alt="" id="jt">
     </div>
+    </router-link>
     <div class="ye">
       <div class="yh" id="yuan1">
         <router-link to="/balance">

@@ -10,8 +10,8 @@
            class="logo_img">
       <p class="app2">下载饿了么APP</p>
     </div>
-    <div class="xiaz">下载</div>
-    <div class="sxzd">
+    <div class="xiaz" @click="xz">下载</div>
+    <div class="sxzd" v-show="isShow">
       <div class="sxzb">
         <div class="sxzy">
           <div id="gth1"></div>
@@ -21,7 +21,7 @@
         <p class="Ios">IOS用户请前往AppStore下载</p>
 
       </div>
-      <div class="sxzqr">确认</div>
+      <div class="sxzqr" @click="qr">确认</div>
     </div>
   </div>
 </template>
@@ -29,9 +29,22 @@
 <script>
   export default {
     name: "Download",
+    // ios:false,
+    data() {
+      return {
+        isShow: false
+      }
+    },
     methods: {
       dj() {
         this.$router.go(-1)
+      },
+      xz: function () {
+        this.isShow = !this.isShow
+
+      },
+      qr() {
+        this.isShow = false
       }
     }
   }
@@ -88,9 +101,10 @@
     background: #4cd964;
     border-radius: .2rem;
     color: #fff;
-    padding: 0.75rem;
-    margin: 0 auto;
-    margin-top: 0.7rem;
+    -webkit-font-smoothing: inherit;
+    padding: 0.6rem;
+    margin: 0.75rem auto;
+    /*margin-top: 0.9rem;*/
     font-weight: 100;
   }
 
@@ -101,11 +115,13 @@
     padding: 0.6rem;
     /*margin: 0 auto;*/
     text-align: center;
+    margin: 0 auto;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
   }
 
   .sxzy {
+
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -137,6 +153,7 @@
   }
 
   .sxzqr {
+    margin: 0 auto;
     width: 13.2rem;
     background: #4cd964;
     font-size: .8rem;
@@ -147,12 +164,61 @@
     border-bottom-right-radius: .25rem;
     color: #fff;
   }
-  /*.sxzd{*/
-    /*margin-top: -5.7rem;*/
-    /*margin-left: -6.5rem;*/
-    /*position: absolute;*/
-    /*left: 50%;*/
-    /*top: 50%;*/
-  /*}*/
+
+  .sxzd {
+    width: 100%;
+    position: absolute;
+    top: 32%;
+    webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+
+  }
+
+  @keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    20% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9);
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(1.03, 1.03, 1.03);
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+      -webkit-transform: scale3d(0.97, 0.97, 0.97);
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
 
 </style>

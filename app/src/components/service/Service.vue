@@ -5,10 +5,12 @@
       <span class="head_dw">服务中心</span>
     </div>
     <div class="fk">
+      <router-link to="/">
       <div class="kf1">
         <img src="../../assets/客服.png" alt="" id="kf">
         <span id="zaix">在线客服</span>
       </div>
+      </router-link>
       <div class="zxkf">
         <img src="../../assets/dianhua-2.png" alt="" id="tel">
         <span id="zaix1">在线客服</span>
@@ -136,6 +138,7 @@
     margin-top: 0.5rem;
     margin-bottom: 0.8rem;
     font-size: .4rem;
+    color: #666;
   }
 
   #tel {

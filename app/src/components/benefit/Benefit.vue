@@ -13,8 +13,9 @@
       </div>
     </div>
     <div class="ssjsj1">
-
+      <router-link to="/coupon">
       <span class="ssjsj">商家代金券说明</span>
+      </router-link>
       <img src="../../assets/问好.png" alt="" id="wh">
     </div>
     <br>
