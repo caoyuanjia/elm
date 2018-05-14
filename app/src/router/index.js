@@ -18,6 +18,11 @@ import Benefit from "@/components/benefit/Benefit"
 import Coupon from  "@/components/coupon/Coupon"
 import Detaill from "@/components/detail/Detaill"
 import Info from "@/components/info/Info"
+import Setusername from "@/components/setusername/Setusername"
+import Address from  "@/components/address/Address"
+import Add from  "@/components/add/Add"
+import AddDetail from "@/components/addDetail/AddDetail"
+import ConfirmOrder from "@/components/confirmOrder/ConfirmOrder"
 Vue.use(Router)
 
 export default new Router({
@@ -114,6 +119,31 @@ export default new Router({
       path:"/info",
       name:"Info",
       component:Info
+    },
+    {
+      path:"/setusername",
+      name:"Setusername",
+      component:Setusername
+    },
+    {
+      path:"/address",
+      name:'Address',
+      component:Address
+    },
+    {
+      path:'/add',
+      name:"Add",
+      component:Add
+    },
+    {
+      path:"/addDetail",
+      name:"AddDetail",
+      component:AddDetail
+    },
+    {
+      path:"/confirmOrder",
+      name:"ConfirmOrder",
+      component:ConfirmOrder
     }
 
   ]

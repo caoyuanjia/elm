@@ -2,9 +2,9 @@
   <div class="head">
     <div class="head_top">
       <router-link to="/home"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
-
-      <span class="head_dw">{{citys}}</span>
-
+      <div class="head_dw">
+      <p class="sss">{{citys}}</p>
+      </div>
       <router-link to="/home"><span class="qhcs">切换城市</span></router-link>
     </div>
     <form class="head_tj">
@@ -103,21 +103,34 @@
     width: 0.8rem;
     margin-left: 0.4rem;
     margin-top: 0.5rem;
+    z-index: 200;
+    position: absolute;
   }
-
+  .sss{
+    display: inline;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
   .head_dw {
-    margin-left: 5.7rem;
+    /*margin-left: 5.7rem;*/
     font-size: .8rem;
     color: #fff;
+    display: inline;
+
   }
 
   .qhcs {
     float: right;
-    margin-right: 0.6rem;
-    margin-top: 0.65rem;
+    right: 0.6rem;
+    top: 0.65rem;
     font-size: .6rem;
     color: #fff;
     font-weight: 100;
+    position: absolute;
+
   }
 
   .head_tj {

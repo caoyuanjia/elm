@@ -4,6 +4,7 @@
       <router-link to="/profile"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
       <span class="head_dw">我的积分</span>
     </div>
+    <div class="mb1" v-if="isShow"></div>
     <div class="ye_s1">
       <div class="ye_s2">
         <div class="zye">
@@ -76,6 +77,14 @@
   /*height: 28.45rem;*/
   /*background: #f5f5f5;*/
   /*}*/
+  .mb1{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255, 255,0.5);
+  }
   .head_top {
     width: 100%;
     height: 1.95rem;
@@ -263,6 +272,7 @@
 
   .sxzd {
     width: 100%;
+    /*height: 20.755rem;*/
     position: absolute;
     top: 27%;
     webkit-animation-duration: 0.75s;
