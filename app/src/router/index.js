@@ -23,6 +23,9 @@ import Address from  "@/components/address/Address"
 import Add from  "@/components/add/Add"
 import AddDetail from "@/components/addDetail/AddDetail"
 import ConfirmOrder from "@/components/confirmOrder/ConfirmOrder"
+import ChooseAddress from "@/components/chooseAddress/ChooseAddress"
+import SearchAddress from "@/components/searchAddress/SearchAddress"
+import Payment from "@/components/payment/Payment"
 Vue.use(Router)
 
 export default new Router({
@@ -144,6 +147,21 @@ export default new Router({
       path:"/confirmOrder",
       name:"ConfirmOrder",
       component:ConfirmOrder
+    },
+    {
+      path:"/chooseAddress",
+      name:"ChooseAddress",
+      component:ChooseAddress
+    },
+    {
+      path:"/searchAddress",
+      name:"SearchAddress",
+      component:SearchAddress
+    },
+    {
+      path:"/payment",
+      name:"Payment",
+      component:Payment
     }
 
   ]

@@ -1,8 +1,12 @@
 <template>
   <div class="head">
     <div class="head_top">
-      <router-link to="/home"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
+      <router-link to="/"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
       <span class="head_dw">选择地址</span>
+    </div>
+    <div class="foot">
+      <img src="../../assets/新增.png" alt="" id="foot">
+      <p class="foot1">新增收货地址</p>
     </div>
   </div>
 </template>
@@ -33,5 +37,26 @@
     margin-left: 5.4rem;
     font-size: .8rem;
     color: #fff;
+  }
+  .foot{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #foot{
+    width: 1.1rem;
+
+  }
+  .foot1{
+    display: inline-block;
+    font-size: .7rem;
+    color: #3190e8;
+    margin-left: .3rem;
+
   }
 </style>
