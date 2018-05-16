@@ -1,8 +1,8 @@
 <template>
   <div class="head">
     <div class="head_top">
-      <router-link to="/home"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
-      <span class="head_dw">郑州</span>
+      <span @click="dj"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></span>
+      <span class="head_dw">搜索</span>
     </div>
     <div class="input_tj">
       <input type="text" placeholder="请输入商家或美食名称" id="input_1">
@@ -24,7 +24,12 @@
 
 <script>
     export default {
-        name: "Search"
+        name: "Search",
+      methods:{
+          dj(){
+            this.$router.go(-1)
+          }
+      }
     }
 </script>
 

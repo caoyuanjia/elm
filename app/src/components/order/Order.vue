@@ -1,7 +1,7 @@
 <template>
   <div class="head">
     <div class="head_top">
-      <router-link to="/home"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
+      <span @click="dj"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></span>
       <span class="head_dw">订单列表</span>
     </div>
     <div class="foot">
@@ -19,7 +19,12 @@
 
 <script>
     export default {
-        name: "Order"
+        name: "Order",
+      methods:{
+        dj() {
+          this.$router.go(-1)
+        },
+      }
     }
 </script>
 

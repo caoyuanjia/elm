@@ -1,7 +1,7 @@
 <template>
   <div class="head">
     <div class="head_top">
-      <router-link to="/home"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
+      <router-link to="/"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
       <span class="head_dw">在线支付</span>
     </div>
     <div class="zxzftop">
@@ -28,7 +28,22 @@
 
       </div>
     </div>
-    <div class="zxqrzf">确认支付</div>
+    <div class="zxqrzf" @click="zx">确认支付</div>
+    <div class="sxzd" v-show="isShow">
+      <div class="sxzb">
+        <div class="sxzy">
+          <div id="gth1"></div>
+          <div id="gth3"></div>
+
+        </div>
+        <p class="Ios">当前环境无法支付，请打开官方APP进行付款</p>
+
+      </div>
+      <router-link to="order">
+      <div class="sxzqr" @click="qr">确认</div>
+      </router-link>
+    </div>
+    <div id="mb7" v-if="isShow"></div>
 
   </div>
 </template>
@@ -44,24 +59,33 @@
         m:"",
         s:"",
         one:one,
-        two:two
+        two:two,
+        isShow:false
       }
     },
     methods:{
       two1(){
 
-        if (this.two==one && this.one==two){
-          this.two=two
-          this.one = one
-        }
 
+        if (this.one == two && this.two == one){
+          this.one = one
+          this.two = two
+        }
       },
       one1(){
-        if(this.one ==one){
-          this.one=two
-        }else if (this.one == two){
-          this.one=one
+        if (this.two==two && this.one==one){
+          this.two=one
+          this.one = two
         }
+
+
+
+      },
+      zx: function() {
+        this.isShow=!this.isShow
+      },
+      qr(){
+        this.isShow=false
       }
     },
     mounted(){
@@ -75,7 +99,7 @@
             m = "0"+m
           }
         }
-        s--
+        s--;
         if(s<"10"){
           s="0"+s
         }
@@ -85,7 +109,7 @@
 
         this.s = s
         this.m = m
-      },1000)
+      },50)
 
     }
   }
@@ -127,6 +151,8 @@
     margin: 0.3rem 0 1rem;
     font-size: 1.5rem;
     color: #333;
+    letter-spacing:0.0427rem;
+
   }
   .zffs1 {
     padding: 0.6rem 0.7rem;
@@ -199,11 +225,126 @@
     line-height: 1.8rem;
 
   }
-  #dwdh{
-    width: 1rem ;
-    position: absolute;
-    left: 89.4%;
-    top: 37%;
 
+  .sxzb {
+    width: 12rem;
+    /*height: 8rem;*/
+    background: #fff;
+    padding: 0.6rem;
+    /*margin: 0 auto;*/
+    text-align: center;
+    margin: 0 auto;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+  }
+
+  .sxzy {
+
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: .15rem solid #f8cb86;
+    margin: 0 auto;
+  }
+
+  #gth1 {
+    width: .12rem;
+    height: 1.5rem;
+    background: #f8cb86;
+    margin: 0.4rem auto;
+  }
+
+  .Ios {
+    margin: 0 auto;
+    font-size: .7rem;
+    color: #333;
+    margin-top: 0.8rem;
+
+  }
+
+  #gth3 {
+    width: .2rem;
+    height: .2rem;
+    border-radius: 50%;
+    margin: 0.2rem auto;
+    background: #f8cb86;
+  }
+
+  .sxzqr {
+    margin: 0 auto;
+    width: 13.2rem;
+    background: #4cd964;
+    font-size: .8rem;
+    /*margin: 0 auto;*/
+    text-align: center;
+    padding: 0.75rem 0;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    color: #fff;
+  }
+
+  .sxzd {
+    width: 100%;
+    position: absolute;
+    top: 23%;
+    webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    z-index: 201;
+
+  }
+
+  @keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    20% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9);
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(1.03, 1.03, 1.03);
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+      -webkit-transform: scale3d(0.97, 0.97, 0.97);
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  #mb7{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0);
   }
 </style>

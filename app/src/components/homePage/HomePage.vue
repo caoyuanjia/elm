@@ -10,8 +10,8 @@
       <span class="bzs">定位不准时,请在城市列表中选择</span>
     </div>
     <div class="dwcs" >
-      <router-link :to="{name:'City',query:{id:guess.id}}" >
-        <span class="zz">{{guess.name}}</span>
+      <router-link :to="{name:'City',query:{id:guess.id}}" style="display: inline-block;width: 100%;height: 100%">
+        <span class="zz5">{{guess.name}}</span>
         <div class="dy">
           <img src="../../assets/jiantou  you.png" alt="" id="jt">
         </div>
@@ -107,7 +107,9 @@
     margin: 0;
     font-size: 0;
   }
-
+  .zz5{
+    color: #3190e8;
+  }
   #app {
     width: 100%;
     height: 100%;
@@ -153,8 +155,8 @@
   .left {
     width: 100%;
     height: 1.237rem;
-    margin-top: 2.65rem;
-    border-bottom: 0.01rem solid #9f9f9f;
+    margin-top: 2.7rem;
+    border-bottom: 0.01rem solid #e4e4e4;
 
   }
 
@@ -225,6 +227,8 @@
   }
   .dy{
     display: inline-block;
+    width: 50%;
+
   }
   .zz1 {
     padding: 0.5rem;
@@ -252,6 +256,10 @@
   .zz {
     font-size: 0.75rem;
     color: #3190e8;
+    height: 1.6rem;
+    /*width: 1.8rem;*/
+    margin-left: 0.2rem;
+    display: inline-block;
   }
   #bs a{
     color: #666;
