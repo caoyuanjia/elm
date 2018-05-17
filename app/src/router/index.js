@@ -26,6 +26,9 @@ import ConfirmOrder from "@/components/confirmOrder/ConfirmOrder"
 import ChooseAddress from "@/components/chooseAddress/ChooseAddress"
 import SearchAddress from "@/components/searchAddress/SearchAddress"
 import Payment from "@/components/payment/Payment"
+import  VipDescription from "@/components/vipDescription/VipDescription"
+import UseCart from "@/components/useCart/UseCart"
+import InvoiceRecord from "@/components/invoiceRecord/InvoiceRecord"
 Vue.use(Router)
 
 export default new Router({
@@ -162,6 +165,21 @@ export default new Router({
       path:"/payment",
       name:"Payment",
       component:Payment
+    },
+    {
+      path:"/vipDescription",
+      name:"VipDescription",
+      component:VipDescription
+    },
+    {
+      path:"/useCart",
+      name:"UseCart",
+      component:UseCart
+    },
+    {
+      path:"/invoiceRecord",
+      name:"InvoiceRecord",
+      component:InvoiceRecord
     }
 
   ]

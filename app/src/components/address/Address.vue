@@ -6,10 +6,12 @@
       <span class="bj">编辑</span>
     </div>
     <hr class="hh">
+    <router-link to="/add">
     <div class="xzdz">
       <span>新增地址</span>
       <img src="../../assets/箭头_右-2.png" alt="" id="jt">
     </div>
+    </router-link>
   </div>
 </template>
 
@@ -41,7 +43,7 @@
     color: #fff;
   }
   .xzdz{
-    width: 100%;
+    width: 93%;
     background: #fff;
     padding: 0.5rem;
     font-size: .7rem;

@@ -69,7 +69,9 @@
     border-radius: 0.213rem;
     color: #fff;
     font-size: .7rem;
+    outline:none;
   }
+
   #ok{
     /*opacity: 0.6;*/
     font-weight: 100;

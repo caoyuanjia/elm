@@ -1,12 +1,12 @@
 <template>
   <div class="head">
     <div class="head_top">
-      <router-link to="/"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
+      <span @click="dj"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></span>
       <span class="head_dw">在线支付</span>
     </div>
     <div class="zxzftop">
       <p class="sysj">支付剩余时间</p>
-      <p class="time">00 : {{m}}: {{s}}</p>
+      <p class="time"><span>00:</span> <span>{{m}}:</span> <span>{{s}}</span></p>
     </div>
     <p class="zffs1">选择支付方式</p>
     <div class="zxzf1">
@@ -81,6 +81,9 @@
 
 
       },
+      dj(){
+        this.$router.go(-1)
+      },
       zx: function() {
         this.isShow=!this.isShow
       },
@@ -109,7 +112,7 @@
 
         this.s = s
         this.m = m
-      },50)
+      },1000)
 
     }
   }
@@ -346,5 +349,10 @@
     top: 0;
     bottom: 0;
     background: rgba(0,0,0,0);
+  }
+  .time span{
+    display: inline-block;
+    width: 50px;
+    text-align: left;
   }
 </style>

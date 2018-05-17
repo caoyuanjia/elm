@@ -100,7 +100,7 @@
       <router-link to="/order">
       <div class="foot1"><img src="../../assets/文本.png" alt="" id="wb"><span class="wb">文本</span></div>
       </router-link>
-      <div class="foot1"><img src="../../assets/用户.png" alt="" id="yh"><span class="yhh">我的</span></div>
+      <div class="foot1"><img src="../../assets/yh.png" alt="" id="yh"><span class="yhh">我的</span></div>
     </div>
 
 

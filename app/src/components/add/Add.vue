@@ -6,7 +6,9 @@
     </div>
     <div class="center">
       <input type="text" placeholder="请填写你的姓名">
+      <router-link to="/addDetail">
       <input type="text" placeholder="小区/写字楼/学校等">
+      </router-link>
       <input type="text" placeholder="请填写详细送餐地址">
       <input type="text" placeholder="请填写能够联系到您的手机号">
       <input type="text" placeholder="备用联系电话(选填)" id="by">

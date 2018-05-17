@@ -1,7 +1,7 @@
 <template>
   <div class="head">
     <div class="head_top">
-      <router-link to="/"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></router-link>
+      <span @click="dj"><img src="../../../src/assets/返回-2.png" alt="" id="fh"></span>
       <span class="head_dw">选择地址</span>
     </div>
     <div class="foot">
@@ -13,7 +13,12 @@
 
 <script>
     export default {
-        name: "confirmOrder"
+        name: "confirmOrder",
+      methods:{
+          dj(){
+            this.$router.go(-1)
+          }
+      }
     }
 </script>
 

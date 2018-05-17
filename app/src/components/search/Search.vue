@@ -6,12 +6,13 @@
     </div>
     <div class="input_tj">
       <input type="text" placeholder="请输入商家或美食名称" id="input_1">
-      <input type="submit" placeholder="提交" id="input_2">
+      <img src="../../assets/a.png" alt="" class="clear" v-if="show1" >
+      <input type="submit" placeholder="提交" id="input_2" v-model="message" @click="dj1">
     </div>
     <div class="foot">
 
       <div class="foot1" id="foot1"><img src="../../assets/饿了么-3.png" alt="" id="wm"> <span class="wm">外卖</span></div>
-      <div class="foot1"><img src="../../assets/znz.png" alt="" id="ss"><span class="ss">搜索</span></div>
+      <div class="foot1"><img src="../../assets/zz.png" alt="" id="ss"><span class="ss">搜索</span></div>
       <router-link to="/order">
       <div class="foot1"><img src="../../assets/文本.png" alt="" id="wb"><span class="wb">文本</span></div>
       </router-link>
@@ -24,11 +25,24 @@
 
 <script>
     export default {
-        name: "Search",
-      methods:{
-          dj(){
-            this.$router.go(-1)
+      name: "Search",
+
+      data() {
+        return {
+          show1: false,
+          message:""
+        }
+      },
+      methods: {
+        dj() {
+          this.$router.go(-1)
+        },
+        dj1(){
+          if (this.message!=""){
+            this.show1=true
           }
+        }
+
       }
     }
 </script>
@@ -60,14 +74,16 @@
     background: #fff;
   }
   #input_1{
-    width: 11.51rem;
+    width: 11rem;
     height: 1.5rem;
     margin-top: .5rem;
     margin-left: .5rem;
     outline:none;
+    font-size: .65rem;
     background: #f2f2f2;
     border-radius: .125rem;
     border: 0.043rem solid #e4e4e4;
+    padding-left: 0.2rem;
   }
   #input_2{
     width: 3.289rem;
@@ -132,5 +148,14 @@
   .foot1 span {
     font-size: .45rem;
     color: #666;
+  }
+  .clear {
+    position: absolute;
+    right: 4.2rem;
+    top: 2.8rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0.2rem 0 0 0.9rem;
+    outline: none;
   }
 </style>

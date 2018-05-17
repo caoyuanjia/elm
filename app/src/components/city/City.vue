@@ -27,13 +27,14 @@
       </router-link>
     </ul>
     <ul v-if="abc.length" class="ssnr"  v-show="ssnr">
-      <!--<router-link to="/order">-->
+
+      <router-link to="/order">
       <li id="bd1" v-for="abcz in abc" >
         <h4 id="name1">{{abcz.name}}</h4>
         <br>
         <p id="add1">{{abcz.address}}</p>
       </li>
-      <!--</router-link>-->
+      </router-link>
       <div class="qksy" @click="qk">清空所有</div>
     </ul>
     <div class="hbq"  v-show="hbq">很抱歉!无搜索结果</div>
@@ -45,7 +46,6 @@
 </template>
 
 <script>
-  var val = document.getElementsByClassName("srxx").value;
 
   import Vue from "vue"
 

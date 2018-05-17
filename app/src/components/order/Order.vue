@@ -9,7 +9,7 @@
       <router-link to="/search">
       <div class="foot1"><img src="../../assets/znz.png" alt="" id="ss"><span class="ss">搜索</span></div>
       </router-link>
-      <div class="foot1"><img src="../../assets/文本.png" alt="" id="wb"><span class="wb">文本</span></div>
+      <div class="foot1"><img src="../../assets/txt.png" alt="" id="wb"><span class="wb">文本</span></div>
       <router-link to="/profile">
       <div class="foot1"><img src="../../assets/用户.png" alt="" id="yh"><span class="yh">我的</span></div>
       </router-link>
@@ -84,9 +84,9 @@
 
   }
   #wb{
-    width: 0.8rem;
+    width: 1rem;
     margin-left: 0.35rem;
-    margin-bottom: 0.08rem;
+    /*margin-bottom: 0.08rem;*/
   }
   .wb{
     display: block;
