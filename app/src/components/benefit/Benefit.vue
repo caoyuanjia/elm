@@ -6,10 +6,12 @@
     </div>
     <div class="ssjc">
       <div class="ssjh1">
+        <router-link to="benefits">
       <span class="ssjh">红包</span>
+        </router-link>
       </div>
       <div class="ssjs1">
-      <span class="ssjs">商家代金券</span>
+      <span class="ssjs" >商家代金券</span>
       </div>
     </div>
     <div class="ssjsj1">
@@ -72,13 +74,14 @@
     margin-top: 0.6rem;
   }
   .ssjh{
-      font-size: .65rem;
-
+    font-size: .65rem;
+    color: #333;
   }
   .ssjs{
     width: 50%;
     font-size: .65rem;
     border-bottom: .1rem solid #3190e8;
+    color: #3190e8;
   }
   #wh{
     width: .6rem;

@@ -19,7 +19,7 @@
     </div>
     <ul v-if="tj">
       <router-link to="/order">
-        <li id="bd" v-for="why in what" v-if="tj" @click="www(why)">
+        <li id="bd" v-for="why in what" @click="www(why)">
           <h4 id="name">{{why.name}}</h4>
           <br>
           <p id="add">{{why.address}}</p>
@@ -55,7 +55,7 @@
       return {
         citys: "",
         message: "",
-        what: '',
+        what: [],
         id: "",
         tj: false,
         num:[],
@@ -98,10 +98,8 @@
         this.message=""
       },
       msg() {
-
-
         if (this.message == "") {
-          this.tj = 0
+          this.tj = false
 
         } else {
           this.tj = true
@@ -118,16 +116,20 @@
               // document.write(bd.push("hjkhkjh"))
             //}
             //   $("#bd").style.display=inline
+            if (this.what.length==0){
+              this.hbq=true
+              this.ssnr=false
+            }else{
+              this.hbq=false
+              this.ssnr=true
+            }
           })
         }
         if (localStorage.getItem("one")){
           this.abc = JSON.parse(localStorage.getItem("one"));
 
         }
-        if (this.abc ==""){
-          this.hbq=true
-          this.ssnr=false
-        }
+
 
 
       },

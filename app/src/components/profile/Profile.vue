@@ -27,7 +27,7 @@
         <span class="ye1">我的余额</span>
         </router-link>
       </div>
-      <router-link to="/benefit">
+      <router-link to="/benefits">
       <div class="yh">
         <div class="yuan">
         <span class="yuan2">

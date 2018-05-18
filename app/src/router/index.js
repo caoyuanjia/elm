@@ -29,6 +29,11 @@ import Payment from "@/components/payment/Payment"
 import  VipDescription from "@/components/vipDescription/VipDescription"
 import UseCart from "@/components/useCart/UseCart"
 import InvoiceRecord from "@/components/invoiceRecord/InvoiceRecord"
+import Benefits from "@/components/benefits/Benefits"
+import Exchange from "@/components/exchange/Exchange"
+import HbDescription from  "@/components/hbDescription/HbDescription"
+import HbHistory from "@/components/hbHistory/HbHistory"
+import Commend from "@/components/commend/Commend"
 Vue.use(Router)
 
 export default new Router({
@@ -180,7 +185,31 @@ export default new Router({
       path:"/invoiceRecord",
       name:"InvoiceRecord",
       component:InvoiceRecord
+    },
+    {
+      path:'/benefits',
+      name:"Benefits",
+      component:Benefits
+    },
+    {
+      path:"/exchange",
+      name:"Exchange",
+      component:Exchange
+    },
+    {
+      path:"/hbDescription",
+      name:"HbDescription",
+      component:HbDescription
+    },
+    {
+      path:"/hbHistory",
+      name:"HbHistory",
+      component:HbHistory
+    },
+    {
+      path:"/commend",
+      name:"Commend",
+      component:Commend
     }
-
   ]
 })
