@@ -60,7 +60,7 @@
       <router-link to="/exchange">
       <div class="dhhb lll">兑换红包</div>
       </router-link>
-      <router-link to="/" >
+      <router-link to="/commend" >
       <div class="dhhb">推荐有奖</div>
       </router-link>
     </div>
