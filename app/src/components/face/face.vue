@@ -45,53 +45,55 @@
       <span>附近商家</span>
     </header>
     <ul v-for="message in messages">
-      <li class="c_list">
-        <div class="bottom_img">
-          <img :src="'//elm.cangdu.org/img/'+message.image_path
+      <router-link :to="{path:'/effect',query:{id:message.id,name:message.name,url:message.image_path}}">
+        <li class="c_list">
+          <div class="bottom_img">
+            <img :src="'//elm.cangdu.org/img/'+message.image_path
 " class="shop_img">
-        </div>
-        <div>
-          <header style="display: flex;justify-content: space-between;align-items: center;
+          </div>
+          <div>
+            <header style="display: flex;justify-content: space-between;align-items: center;
 }">
-            <h4 class="c_h4">
-              <span class="c_pinpai" style="font-weight: bolder;color: #333">品牌</span>
-              <span style="font-weight: bolder;color: #333;font-size: .7rem">{{message.name}}</span>
-            </h4>
-            <ul class="c_middle">
-              <li>保</li>
-              <li>准</li>
-              <li>票</li>
-            </ul>
-          </header>
-          <h5 class="c_h51">
-            <div class="star">
-              <el-rate
-                v-model="message.rating"
-                disabled
-                show-score
-                text-color="#ff9900"
-                score-template="{value}">
-              </el-rate>
-            </div>
-            <div class="span1">月售106单</div>
-            <div class="span2">蜂鸟专送</div>
-            <div class="span3">准时达</div>
-          </h5>
-          <h5>
-            <p class="p1">
-              ￥20起送/配送费约￥5
-            </p>
-            <div class="c_div">
+              <h4 class="c_h4">
+                <span class="c_pinpai" style="font-weight: bolder;color: #333">品牌</span>
+                <span style="font-weight: bolder;color: #333;font-size: .7rem">{{message.name}}</span>
+              </h4>
+              <ul class="c_middle">
+                <li>保</li>
+                <li>准</li>
+                <li>票</li>
+              </ul>
+            </header>
+            <h5 class="c_h51">
+              <div class="star">
+                <el-rate
+                  v-model="message.rating"
+                  disabled
+                  show-score
+                  text-color="#ff9900"
+                  score-template="{value}">
+                </el-rate>
+              </div>
+              <div class="span1">月售106单</div>
+              <div class="span2">蜂鸟专送</div>
+              <div class="span3">准时达</div>
+            </h5>
+            <h5>
+              <p class="p1">
+                ￥20起送/配送费约￥5
+              </p>
+              <div class="c_div">
               <span>
                 {{message.distance}} /
               </span>
-              <span style="color: #3190e8">
+                <span style="color: #3190e8">
                 {{message.order_lead_time}}
               </span>
-            </div>
-          </h5>
-        </div>
-      </li>
+              </div>
+            </h5>
+          </div>
+        </li>
+      </router-link>
     </ul>
   </div>
 </div>
