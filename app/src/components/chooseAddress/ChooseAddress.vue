@@ -11,9 +11,9 @@
           <input type="text" placeholder="你的名字" class="name" v-model="v1">
           <div class="bao4">
             <img :src="two" alt="" class="dui1" @click="two1">
-            <span class="man">先生</span>
-            <img :src="one" alt="" class="dui2" @click="one1">
-            <span class="man1">女士</span>
+            <span class="man" v-model="v6">先生</span>
+            <img :src="one" alt="" class="dui2" @click="one1" >
+            <span class="man1" v-model="v6" >女士</span>
           </div>
         </div>
       </div>
@@ -44,7 +44,9 @@
       </div>
     </div>
     <!--@click="www"-->
+    <router-link to="/confirmOrder">
     <div class="tianjqr" @click="tianjqr"><span>确认</span></div>
+    </router-link>
   </div>
 </template>
 
@@ -62,21 +64,25 @@
         v2: null,
         v3: null,
         v4: null,
-        bydh:false
+        bydh:false,
+        v6:"先生"
+
       }
 
 
     },
     methods: {
       two1() {
-
-
+this.v6="先生"
+        localStorage.setItem('v6', JSON.stringify(this.v6));
         if (this.one == two && this.two == one) {
           this.one = one
           this.two = two
         }
       },
       one1() {
+        this.v6="女士"
+        localStorage.setItem('v6', JSON.stringify(this.v6));
         if (this.two == two && this.one == one) {
           this.two = one
           this.one = two
@@ -87,11 +93,15 @@
          localStorage.setItem('v2', JSON.stringify(this.v2));
          localStorage.setItem('v3', JSON.stringify(this.v3));
          localStorage.setItem('v4', JSON.stringify(this.v4));
-        // console.log(JSON.stringify(info))
+         localStorage.setItem('v6', JSON.stringify(this.v6));
+         // localStorage.setItem('v7', JSON.stringify(this.v7));
+        console.log(JSON.stringify(this.v6))
+
       },
       jiah(){
         this.bydh=true
-      }
+      },
+
     }
   }
 </script>

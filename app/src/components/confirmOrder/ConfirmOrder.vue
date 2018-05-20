@@ -13,13 +13,20 @@
     </router-link>
     <ul>
       <li>
-        <span>{{v1}}</span>
-        <span>{{v2}}</span>
-        <span>{{v3}}</span>
-        <span>{{v4}}</span>
+        <img src="../../assets/two.png" alt="" class="duih">
+        <div class="xs5">
+          <div >
+            <span class="xzdz1">{{v1}}</span>
+            <span class="xzdz1">{{v6}}</span>
+            <span class="xzdz2">{{v2}}</span>
+          </div>
+          <div class="xs2">
+            <span class="xzdz3">{{v3}}</span>
+            <span class="xzdz4">{{v4}}</span>
+          </div>
+        </div>
       </li>
-      <li></li>
-      <li></li>
+
     </ul>
   </div>
 </template>
@@ -43,6 +50,8 @@
       this.v2 = JSON.parse(localStorage.getItem('v2'));
       this.v3 = JSON.parse(localStorage.getItem('v3'));
       this.v4 = JSON.parse(localStorage.getItem('v4'));
+      this.v6 = JSON.parse(localStorage.getItem('v6'));
+      // this.v7 = JSON.parse(localStorage.getItem('v7'));
       console.log(this.v1);
     }
   }
@@ -52,7 +61,7 @@
   .head {
     width: 100%;
     height: 28.45rem;
-    background: #f5f5f5;
+    background: #fff;
   }
 
   .head_top {
@@ -95,5 +104,48 @@
     color: #3190e8;
     margin-left: .3rem;
 
+  }
+
+  li {
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: .025rem solid #f5f5f5;
+    padding: .7rem;
+    line-height: 1rem;
+    background: #fff;
+  }
+  .xs2{
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+  }
+  .xzdz1{
+    font-size: .8rem;
+    font-weight: 700;
+  }
+  .xzdz3{
+    font-size: .5rem;
+    color: #fff;
+    border-radius: .15rem;
+    background-color: #ff5722;
+    height: .6rem;
+    line-height: .6rem;
+    padding: 0 .2rem;
+    margin-right: .3rem;
+  }
+  .xzdz4{
+    font-size: .6rem;
+    color: #777;
+  }
+  .xs2{
+    display: block;
+  }
+  .xs5{
+    margin-left: 1rem;
+  }
+  .duih{
+    width: 0.8rem;
   }
 </style>
